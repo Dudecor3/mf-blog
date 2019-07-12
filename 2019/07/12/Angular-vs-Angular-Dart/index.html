@@ -5,15 +5,20 @@
   
 
   
-  <title>MF Dev</title>
+  <title>Why I moved to Angular Dart - Part 1 | MF Dev</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="MF Dev">
-<meta property="og:url" content="https://github.com/Dudecor3/index.html">
+  <meta name="description" content="You know how it goes, you’ve finally (but probably haven’t) mastered your tech stack, you know the ins and outs of your chosen languages, frameworks. Found work-arounds for all those little niggly bit">
+<meta name="keywords" content="Angular,Dart,TypeScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Why I moved to Angular Dart - Part 1">
+<meta property="og:url" content="https://github.com/Dudecor3/2019/07/12/Angular-vs-Angular-Dart/index.html">
 <meta property="og:site_name" content="MF Dev">
+<meta property="og:description" content="You know how it goes, you’ve finally (but probably haven’t) mastered your tech stack, you know the ins and outs of your chosen languages, frameworks. Found work-arounds for all those little niggly bit">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-12T09:20:38.330Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MF Dev">
+<meta name="twitter:title" content="Why I moved to Angular Dart - Part 1">
+<meta name="twitter:description" content="You know how it goes, you’ve finally (but probably haven’t) mastered your tech stack, you know the ins and outs of your chosen languages, frameworks. Found work-arounds for all those little niggly bit">
   
     <link rel="alternate" href="/mf-blog/atom.xml" title="MF Dev" type="application/atom+xml">
   
@@ -64,9 +69,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Angular-vs-Angular-Dart" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Angular-vs-Angular-Dart" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/mf-blog/2019/07/12/Angular-vs-Angular-Dart/" class="article-date">
   <time datetime="2019-07-12T07:44:53.000Z" itemprop="datePublished">2019-07-12</time>
@@ -79,8 +82,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/mf-blog/2019/07/12/Angular-vs-Angular-Dart/">Why I moved to Angular Dart - Part 1</a>
+    <h1 class="article-title" itemprop="name">
+      Why I moved to Angular Dart - Part 1
     </h1>
   
 
@@ -122,117 +125,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-how-primitive-obsession-can-be-an-anti-pattern" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/mf-blog/2019/05/05/how-primitive-obsession-can-be-an-anti-pattern/" class="article-date">
-  <time datetime="2019-05-05T09:51:46.000Z" itemprop="datePublished">2019-05-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/mf-blog/2019/05/05/how-primitive-obsession-can-be-an-anti-pattern/">How Primitive Obsession can be an Anti-Pattern</a>
-    </h1>
+    <a href="/mf-blog/2019/05/05/how-primitive-obsession-can-be-an-anti-pattern/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">How Primitive Obsession can be an Anti-Pattern</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>This post was inspired by my own self reflection on code I have recently writtne. I should be doing University coursework, but whatever, there’s always time to write a programming blog. Especially if it’s the uni work that has inspired me to write this article. </p>
-<h1 id="What-is-primitive-type-obsession"><a href="#What-is-primitive-type-obsession" class="headerlink" title="What is primitive type obsession?"></a>What is primitive type obsession?</h1><p>Primitive type obessesion according to Refactoring Guru “Like most other smells, primitive obsessions are born in moments of weakness. “Just a field for storing some data!” the programmer said. Creating a primitive field is so much easier than making a whole new class, right?” </p>
-<p>It’s way easier to use your languages built in primitive types than to create one, but sometimes it’s best for your product, your code base and your team to just make your own custom types. </p>
-<p>Consider this piece of Java code:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RentalOrder</span> <span class="keyword">extends</span> <span class="title">ObservableOrder</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String orderReference;</span><br><span class="line">    <span class="keyword">private</span> String dateStarted;</span><br><span class="line">    <span class="keyword">private</span> String dateFinished;</span><br><span class="line">    <span class="keyword">private</span> String orderStatus;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">RentalOrder</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        <span class="keyword">this</span>.orderReference = <span class="string">"OSG-"</span> + UUID.randomUUID().toString().substring(<span class="number">0</span>, <span class="number">7</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>pretty simple right? The whole idea of this is that we have a rental order (Doesn’t matter what for), but I want to target something that seems fairly innocent:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> String orderReference;</span><br></pre></td></tr></table></figure>
-<p>But what’s wrong with this? It seems perfectly fine, right? That’s because it is to a degree. We’ve told out RentalOrder class to have a value called orderReference and that is going to be a string, and in the constructor we tell it to create a new reference every time the class is constructed by prefixing ‘OSG’ with the first 8 characters of a UUID. </p>
-<p>But what if we wanted to validate this order ref before saving it? </p>
-<p>We could wrap the order ref inside some logic that would validate it before we save it, yeah that seems okay. </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** let's suppose this code sits inside a method called 'saveNewRentalOrder()'</span></span><br><span class="line"><span class="comment">* we can validate our order reference to make sure that it starts with 'OSG' and contains another 7 alpha-numerical characters</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(order.getOrderReference().substring(<span class="number">0</span> ,<span class="number">3</span>).equals(<span class="string">"OSG-"</span>) &amp;&amp; order.getOrderReference().substring(<span class="number">4</span>, <span class="number">11</span>)...) &#123; <span class="comment">// further logic</span></span><br><span class="line">    <span class="keyword">this</span>._db.write(order); <span class="comment">// yes, I know, it's not this easy but let's assume it is. </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>This (if implemented properly) would make sure that an order reference looks something like this ‘OSG-1234567’, this works as well it does exactly what it’s supposed to,<br>we could even move the logic into a method called orderReferenceIsValid(String orderReference); and call it like so </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(orderReferenceIsValid(order.getOrderReference())) &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>and that cleans the code up a little, it’s always a good idea to use the single responsibility principle where possible in app development. </p>
-<p>BUT what if we wanted our order reference to validate itself? This is where things get interesting, what if orderReference wasn’t a string but its own type? </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OrderRefernce</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> String _orderReference;</span><br><span class="line"></span><br><span class="line">    OrderReference(String orderReference) &#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>._isValidOrderReference(orderReference)) &#123;</span><br><span class="line">            <span class="keyword">this</span>._orderReference = orderReference</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> Error(<span class="string">"order reference is not valid."</span> +  </span><br><span class="line">            <span class="string">" It must start with OSG- and have 7 following alpha-numeric characters e.g: OSG-1234567"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">_isValidOrderReference</span><span class="params">(String orderRefernce)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// validation logic</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">getOrderReference</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>._orderReference;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>That’s much better, the OrderReference is now aware of whether it’s valid at time of construction and will force the code to throw an error. So now when we look back at our Rental Order class, we are now seeing the following code: </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RentalOrder</span> <span class="keyword">extends</span> <span class="title">ObservableOrder</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> OrderReference orderReference;</span><br><span class="line">    <span class="keyword">private</span> String dateStarted;</span><br><span class="line">    <span class="keyword">private</span> String dateFinished;</span><br><span class="line">    <span class="keyword">private</span> String orderStatus;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">RentalOrder</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        <span class="keyword">this</span>.orderReference = <span class="keyword">new</span> OrderReference(<span class="string">"OSG-"</span> + UUID.randomUUID().toString().substring(<span class="number">0</span>, <span class="number">7</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Awesome, we now no longer need to validate the orderReference on save or any other action, because we can have confidence in the fact that each orderReference is self-validated.</p>
-<h2 id="Why-tho"><a href="#Why-tho" class="headerlink" title="Why tho?"></a>Why tho?</h2><p>Primitive types are great when they don’t require any custom logic as they all contain the methods required to most basic operations. Creating our own types ensures that all this logic is encapuslated inside it’s own class. We’ve also also made our lives easier because any problems with the orderReference will also be encapsulated so we know exactly where to go if we ever need to debug. </p>
-<p>That said, use Primitive types wisely. Not everything needs to be encapsulated into a new class, developer discression is advised when creating these. </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://github.com/Dudecor3/2019/05/05/how-primitive-obsession-can-be-an-anti-pattern/" data-id="cjxzwfy0o0001dsuztszc9sc1" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-my-first-two-years-as-a-dev" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/mf-blog/2019/05/01/my-first-two-years-as-a-dev/" class="article-date">
-  <time datetime="2019-05-01T21:31:37.000Z" itemprop="datePublished">2019-05-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/mf-blog/2019/05/01/my-first-two-years-as-a-dev/">My First 2 Years as a Software Developer</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>As a moody, angsty 19 year old starting a Music Technology course back in 2011. I never would have once thought that I would end up developing software for a living. But here we are in 2019, still moody, still angsty just older… Developing software for a rapidly growing dev-house in Staffordshire.  </p>
-<p>The music technology course opened the door for my passion for software. As I was using digital software and plugins, I found myself asking “How do these plugins work? How are they made” more and more often. After doing some research, I found that you could write these plugins in something called C++. So I started to learn C++, I cried, alot… Failed my degree, Moved to learning JavaScript whilst working in a Zoo resturaunt for a few years and the rest is history. </p>
-<p>I’ve learned a lot over 2 years, I’ve learned that being a good software developer is more than just being able to architect and write code all day. It’s having the ability to collaborate with a team of people that aren’t just developers, problem solving to meet customer requirements, compromise, and most importantly, having the mindset that you don’t know everything, and you probably never will. </p>
-<h2 id="What-I’ve-learned"><a href="#What-I’ve-learned" class="headerlink" title="What I’ve learned"></a>What I’ve learned</h2><p>It can be tough being a new software developer, you’re surrounded by brilliant and talented people who know what they’re talking about, there’s all these buzzwords, Acronyms, frameworks and technologies being thrown around in discussion and it can be overwhelming… Don’t worry about it. Looking back from when I first started to now, I’d probably give myself these words of advice: </p>
-<ul>
-<li><strong>Learn how to read other people’s code</strong> - This one is so important! Let’s be real, you’re going to be spending most of your time looking at code that isn’t yours, and the programmer who originally wrote it has probably moved on. It can be scary to look at other people’s code, you weren’t in their minds or with them when they wrote it but as long as the code is well written, you’ll get used to reading code that you don’t own.</li>
-<li><strong>Your colleagues are there to help</strong> - I don’t think I would have got very far at a dev house if I didn’t constantly ask people about EVERYTHING. Everytime I was paired with someone, I would constantly be asking ‘Why are we doing this?’ or ‘Is there another way of doing this?’ to the point where I honestly thought I was going to be kidnapped and dumped in a forest somewhere in Scotland. Truth is as long as you’re listening, most people are more than happy to teach you. </li>
-<li><strong>Use work’s tech stack in your own projects</strong> - There’s a lot to learn in programming, a lot of concepts, technologies, frameworks and languages. One thing that really boosted my confidence on our massive code base was learning the tech stack that I use day in, day out (in my case: .NET/C# and Angular/TypeScript). It really does help.</li>
-<li><strong>You don’t have to be a genius</strong> - I wonder if a lot of people suffered from the illusion that you have to be some sort of God with a 10,000 IQ to be a programmer like I did? You really don’t. All you need is a keen attitude to learn. </li>
-<li><strong>But it doesn’t mean programming is easy</strong> - It’s still important to understand that software development also isn’t easy. There are times where you will struggle but it’s all part of the job. </li>
-<li><strong>Domain knowledge is key</strong> - Having an understanding of how systems gives you more confidence when it comes to adding and removing from the code base. It also helps with things like making sure that what you are doing doesn’t have potential side effects to the rest of the system or having confidence that you’re not going to introduce a new bug to the system.</li>
-</ul>
-<h3 id="And-that’s-about-it"><a href="#And-that’s-about-it" class="headerlink" title="And that’s about it"></a>And that’s about it</h3><p>I think it’s just important to remember that Software development is one of those ‘you get out what you put in’ kind of industries and that it’s a very rewarding industry if you are willing to put time into professional and personal development. Enjoy what you do and you’ll never work a day in your life, or something like that…</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://github.com/Dudecor3/2019/05/01/my-first-two-years-as-a-dev/" data-id="cjxzwfy0t0003dsuzkxepx4ii" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
